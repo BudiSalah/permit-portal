@@ -8,8 +8,7 @@
 4. [Project Structure](#project-structure)
 5. [Implementation Phases](#implementation-phases)
 6. [Detailed Implementation Steps](#detailed-implementation-steps)
-7. [Testing Strategy](#testing-strategy)
-8. [Deployment Considerations](#deployment-considerations)
+7. [Deployment Considerations](#deployment-considerations)
 
 ---
 
@@ -189,7 +188,6 @@ practice-nestjs/
 4. Create Permits service (business logic)
 5. Create Permits controller (REST endpoints)
 6. Set up Swagger/OpenAPI documentation
-7. Test API endpoints (Swagger UI or Postman/Thunder Client)
 
 ### Phase 3: Frontend Development
 
@@ -201,21 +199,20 @@ practice-nestjs/
 6. Implement status visualization
 7. Add responsive design
 
-### Phase 4: Integration & Testing
+### Phase 4: Integration
 
 1. Connect frontend to backend via Server Routes
-2. End-to-end testing
-3. RTL testing
-4. Responsive design testing
-5. Error handling
-6. Form validation
+2. RTL testing
+3. Responsive design testing
+4. Error handling
+5. Form validation
 
 ### Phase 5: Documentation & Polish
 
 1. Write comprehensive README.md
 2. Add code comments
 3. Prepare presentation
-4. Final testing and bug fixes
+4. Final bug fixes
 
 ---
 
@@ -493,26 +490,20 @@ export default defineEventHandler(async (event) => {
 
 ---
 
-### Phase 4: Integration & Testing
+### Phase 4: Integration
 
-#### 4.1 API Integration Testing
+#### 4.1 API Integration
 
 - Test all endpoints via Nuxt Server Routes
 - Verify data flow: Frontend → Server Routes → Backend → Database
 - Test error scenarios
 
-#### 4.2 Frontend Testing
+#### 4.2 Frontend Verification
 
 - Form validation
 - Status visualization
 - RTL layout
 - Responsive design
-
-#### 4.3 End-to-End Testing
-
-- Submit new permit
-- View permit list
-- Verify status display
 
 ---
 
@@ -546,33 +537,6 @@ export default defineEventHandler(async (event) => {
 - Follow TypeScript best practices
 - Consistent code formatting (Prettier)
 - Linting (ESLint)
-
----
-
-## Testing Strategy
-
-### Backend Testing
-
-- Unit tests for services
-- Integration tests for controllers
-- Database tests
-
-### Frontend Testing
-
-- Component tests
-- E2E tests (optional)
-- Visual regression tests (status badges)
-
-### Manual Testing Checklist
-
-- [ ] Submit new permit application
-- [ ] View all permits on home page
-- [ ] Status colors are distinct and clear
-- [ ] RTL layout works correctly
-- [ ] Responsive on mobile, tablet, desktop
-- [ ] Form validation works
-- [ ] Error messages display properly
-- [ ] Loading states work
 
 ---
 
