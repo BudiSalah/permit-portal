@@ -120,6 +120,7 @@
 <script setup lang="ts">
 import { Form, Field } from 'vee-validate';
 import * as yup from 'yup';
+import { sleep } from '~/utils/sleep';
 
 const emit = defineEmits<{
   success: [];
@@ -153,6 +154,9 @@ const handleSubmit = async (values: any) => {
   loading.value = true;
 
   try {
+    // Simulate request time (2-4 seconds)
+    await sleep(2, 4);
+
     await $fetch('/api/permits', {
       method: 'POST',
       body: values,

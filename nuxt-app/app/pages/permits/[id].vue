@@ -199,6 +199,7 @@
 <script setup lang="ts">
 import { Form, Field } from 'vee-validate';
 import * as yup from 'yup';
+import { sleep } from '~/utils/sleep';
 
 interface Permit {
   id: number;
@@ -240,6 +241,9 @@ const handleStatusUpdate = async (values: any) => {
   updating.value = true;
 
   try {
+    // Simulate request time (2-4 seconds)
+    await sleep(2, 4);
+
     await $fetch(`/api/permits/${id}`, {
       method: 'PATCH',
       body: {
@@ -276,6 +280,9 @@ const handleDelete = async () => {
   deleting.value = true;
 
   try {
+    // Simulate request time (2-4 seconds)
+    await sleep(2, 4);
+
     await $fetch(`/api/permits/${id}`, {
       method: 'DELETE',
     });
