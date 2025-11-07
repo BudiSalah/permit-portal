@@ -70,6 +70,8 @@ const { data, pending, error, refresh } = await useAsyncData<Permit[]>(
 
 // Refresh data when page becomes visible (in case new permits were added)
 onMounted(() => {
+  refresh();
+
   window.addEventListener('focus', () => refresh());
 });
 
