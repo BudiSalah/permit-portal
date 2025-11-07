@@ -112,7 +112,7 @@ Build a simplified Permit Request Service Portal that allows citizens to submit 
 ## Project Structure
 
 ```
-practice-nestjs/
+permit-portal/
 ├── README.md
 ├── IMPLEMENTATION_PLAN.md
 ├── .gitignore
