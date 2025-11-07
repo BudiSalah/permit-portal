@@ -70,8 +70,11 @@ const { data, pending, error, refresh } = await useAsyncData<Permit[]>(
 
 // Refresh data when page becomes visible (in case new permits were added)
 onMounted(() => {
-  if (process.client) {
-    window.addEventListener('focus', () => refresh());
-  }
+  window.addEventListener('focus', () => refresh());
+});
+
+// Refresh when navigating back to this page
+onActivated(() => {
+  refresh();
 });
 </script>

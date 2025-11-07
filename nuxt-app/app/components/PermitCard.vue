@@ -14,7 +14,7 @@
       <StatusBadge :status="permit.application_status" />
     </div>
 
-    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
       <div class="flex items-center">
         <span class="font-medium ml-2">البريد الإلكتروني:</span>
         <span>{{ permit.applicant_email }}</span>
@@ -23,6 +23,15 @@
         <span class="font-medium ml-2">تاريخ التقديم:</span>
         <span>{{ formatDate(permit.submitted_at) }}</span>
       </div>
+    </div>
+
+    <div class="flex gap-2 mt-4">
+      <NuxtLink
+        :to="`/permits/${permit.id}`"
+        class="flex-1 text-center bg-blue-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+      >
+        عرض التفاصيل
+      </NuxtLink>
     </div>
   </div>
 </template>
