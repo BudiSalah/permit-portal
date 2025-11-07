@@ -94,6 +94,7 @@ Build a simplified Permit Request Service Portal that allows citizens to submit 
 - **Framework**: NestJS 11.x (Latest)
 - **Database ORM**: TypeORM (standard for NestJS with PostgreSQL)
 - **Validation**: class-validator, class-transformer
+- **API Documentation**: Swagger/OpenAPI (@nestjs/swagger)
 - **API Style**: RESTful
 
 ### Database
@@ -187,7 +188,8 @@ practice-nestjs/
 3. Implement DTOs (validation)
 4. Create Permits service (business logic)
 5. Create Permits controller (REST endpoints)
-6. Test API endpoints (Postman/Thunder Client)
+6. Set up Swagger/OpenAPI documentation
+7. Test API endpoints (Swagger UI or Postman/Thunder Client)
 
 ### Phase 3: Frontend Development
 
@@ -244,6 +246,7 @@ cd backend
 npx @nestjs/cli new . --package-manager npm
 npm install @nestjs/typeorm typeorm pg
 npm install @nestjs/config
+npm install @nestjs/swagger swagger-ui-express
 npm install class-validator class-transformer
 npm install --save-dev @types/node @types/pg
 ```
@@ -373,7 +376,22 @@ export class UpdatePermitDto {
 - `PATCH /permits/:id` - Update permit
 - `DELETE /permits/:id` - Delete permit
 
-#### 2.5 Module Configuration
+**Swagger Documentation:**
+
+- All endpoints are documented with Swagger/OpenAPI
+- API documentation available at `/api` endpoint
+- Interactive API testing via Swagger UI
+- Response schemas and examples included
+
+#### 2.5 Swagger/OpenAPI Documentation
+
+- Install `@nestjs/swagger` and `swagger-ui-express`
+- Configure Swagger in `main.ts`
+- Add API decorators to controller (`@ApiTags`, `@ApiOperation`, `@ApiResponse`)
+- Add property decorators to DTOs (`@ApiProperty`, `@ApiPropertyOptional`)
+- Access documentation at `/api` endpoint
+
+#### 2.6 Module Configuration
 
 - Import TypeORM module
 - Configure database connection
@@ -515,6 +533,9 @@ export default defineEventHandler(async (event) => {
    - Start backend
    - Start frontend
 6. **API Documentation**
+   - Swagger UI available at `http://localhost:3001/api`
+   - Interactive API testing
+   - Complete endpoint documentation
 7. **Project Structure**
 8. **Architecture Decisions**
 9. **Contributing**

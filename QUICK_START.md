@@ -78,12 +78,14 @@ npm run start:dev
 
 ```
 🚀 Backend is running on: http://localhost:3001
+📚 Swagger documentation: http://localhost:3001/api
 ```
 
 **What happens:**
 
 - TypeORM will automatically create the `permit_applications` table in the database
 - The backend API will be available at `http://localhost:3001`
+- Swagger API documentation will be available at `http://localhost:3001/api`
 - CORS is enabled for the frontend
 
 **Test the backend:**
@@ -153,6 +155,8 @@ npm run dev
 ### Backend API
 
 - **Base URL**: http://localhost:3001
+- **API Endpoints**: http://localhost:3001/permits
+- **Swagger Documentation**: http://localhost:3001/api
 - **Health Check**: http://localhost:3001 (should return basic NestJS response)
 
 ---
@@ -167,11 +171,20 @@ The backend should automatically create tables when it starts. You can verify by
 
 Once the backend is running, you can test it:
 
+**Option 1: Using Swagger UI (Recommended)**
+
+1. Open http://localhost:3001/api in your browser
+2. Explore all available endpoints
+3. Use the "Try it out" feature to test endpoints interactively
+4. View request/response schemas and examples
+
+**Option 2: Using cURL**
+
 ```bash
-# Test GET endpoint (will be available after Phase 2)
+# Test GET endpoint
 curl http://localhost:3001/permits
 
-# Test POST endpoint (will be available after Phase 2)
+# Test POST endpoint
 curl -X POST http://localhost:3001/permits \
   -H "Content-Type: application/json" \
   -d '{
@@ -266,11 +279,16 @@ You'll need **3 terminal windows**:
 After successfully running the applications:
 
 1. ✅ Phase 1 is complete - Infrastructure is set up
-2. ⏭️ Proceed to Phase 2: Backend Development
-   - Create DTOs
-   - Implement Permits Service
-   - Create Permits Controller
-   - Test API endpoints
+2. ✅ Phase 2 is complete - Backend API with Swagger documentation
+   - DTOs with validation
+   - Permits Service with CRUD operations
+   - Permits Controller with REST endpoints
+   - Swagger/OpenAPI documentation at `/api`
+3. ⏭️ Proceed to Phase 3: Frontend Development
+   - Create Nuxt Server Routes (API Gateway)
+   - Build Home page with permit list
+   - Build Apply page with form
+   - Implement status visualization
 
 ---
 
@@ -300,12 +318,13 @@ npm run dev
 
 ## Ports Summary
 
-| Service          | Port | URL                   |
-| ---------------- | ---- | --------------------- |
-| Frontend (Nuxt)  | 3000 | http://localhost:3000 |
-| Backend (NestJS) | 3001 | http://localhost:3001 |
-| PostgreSQL       | 5432 | localhost:5432        |
+| Service               | Port | URL                       |
+| --------------------- | ---- | ------------------------- |
+| Frontend (Nuxt)       | 3000 | http://localhost:3000     |
+| Backend (NestJS)      | 3001 | http://localhost:3001     |
+| Swagger Documentation | 3001 | http://localhost:3001/api |
+| PostgreSQL            | 5432 | localhost:5432            |
 
 ---
 
-**Note**: Currently, only Phase 1 (infrastructure) is complete. The backend API endpoints and frontend pages will be implemented in Phase 2 and Phase 3.
+**Note**: Phase 1 (infrastructure) and Phase 2 (backend API with Swagger) are complete. The frontend pages will be implemented in Phase 3.
