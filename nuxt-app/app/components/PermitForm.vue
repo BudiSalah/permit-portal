@@ -155,8 +155,8 @@ const handleSubmit = async (values: any, { resetForm }: FormActions<any>) => {
   loading.value = true;
 
   try {
-    // Simulate request time (2-4 seconds)
-    await sleep(2, 4);
+    // Simulate request time (1-3 seconds)
+    await sleep(1, 3);
 
     await $fetch('/api/permits', {
       method: 'POST',
