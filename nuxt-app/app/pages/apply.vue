@@ -17,7 +17,7 @@
       <div class="mt-6">
         <NuxtLink
           to="/"
-          class="text-blue-600 hover:text-blue-700 dark:text-blue-400 inline-flex items-center"
+          class="text-primary-600 hover:text-primary-700 dark:text-primary-400 inline-flex items-center"
         >
           ← العودة إلى القائمة الرئيسية
         </NuxtLink>

@@ -13,7 +13,7 @@
       <div class="mb-6">
         <NuxtLink
           to="/apply"
-          class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+          class="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors"
         >
           تقديم طلب جديد
         </NuxtLink>
@@ -21,7 +21,7 @@
 
       <div v-if="pending" class="text-center py-12">
         <div
-          class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"
+          class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"
         ></div>
         <p class="mt-4 text-gray-600 dark:text-gray-400">جاري التحميل...</p>
       </div>
@@ -40,7 +40,7 @@
         </p>
         <NuxtLink
           to="/apply"
-          class="inline-block mt-4 text-blue-600 hover:text-blue-700 dark:text-blue-400"
+          class="inline-block mt-4 text-primary-600 hover:text-primary-700 dark:text-primary-400"
         >
           تقديم أول طلب
         </NuxtLink>

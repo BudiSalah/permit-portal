@@ -28,7 +28,7 @@
     <div class="flex gap-2 mt-4">
       <NuxtLink
         :to="`/permits/${permit.id}`"
-        class="flex-1 text-center bg-blue-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+        class="flex-1 text-center bg-primary-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors"
       >
         عرض التفاصيل
       </NuxtLink>

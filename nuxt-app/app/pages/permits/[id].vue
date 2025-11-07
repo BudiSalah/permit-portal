@@ -4,7 +4,7 @@
       <div class="mb-6">
         <NuxtLink
           to="/"
-          class="text-blue-600 hover:text-blue-700 dark:text-blue-400 inline-flex items-center mb-4"
+          class="text-primary-600 hover:text-primary-700 dark:text-primary-400 inline-flex items-center mb-4"
         >
           ← العودة إلى القائمة الرئيسية
         </NuxtLink>
@@ -12,7 +12,7 @@
 
       <div v-if="pending" class="text-center py-12">
         <div
-          class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"
+          class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"
         ></div>
         <p class="mt-4 text-gray-600 dark:text-gray-400">جاري التحميل...</p>
       </div>
@@ -118,7 +118,7 @@
                   id="status"
                   v-bind="field"
                   :class="[
-                    'w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors',
+                    'w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors',
                     errors.length > 0
                       ? 'border-red-500 dark:border-red-600'
                       : 'border-gray-300 dark:border-gray-600',
@@ -156,7 +156,7 @@
             <button
               type="submit"
               :disabled="updating || !meta.valid"
-              class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              class="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <span v-if="updating">جاري التحديث...</span>
               <span v-else>تحديث الحالة</span>
