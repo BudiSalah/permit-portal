@@ -118,6 +118,7 @@
 </template>
 
 <script setup lang="ts">
+import type { FormActions } from 'vee-validate';
 import { Form, Field } from 'vee-validate';
 import * as yup from 'yup';
 import { sleep } from '~/utils/sleep';
@@ -148,7 +149,7 @@ const schema = yup.object({
     .max(200, 'يجب ألا يتجاوز نوع التصريح 200 حرف'),
 });
 
-const handleSubmit = async (values: any) => {
+const handleSubmit = async (values: any, { resetForm }: FormActions<any>) => {
   error.value = null;
   success.value = false;
   loading.value = true;
@@ -163,7 +164,17 @@ const handleSubmit = async (values: any) => {
     });
 
     success.value = true;
+
+    // Reset form
+    resetForm();
+
+    // Emit success event to parent component
     emit('success');
+
+    // Reset success message after 3 seconds
+    setTimeout(() => {
+      success.value = false;
+    }, 3000);
   } catch (err: any) {
     error.value =
       err.data?.message || 'حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.';
