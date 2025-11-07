@@ -164,11 +164,6 @@ const handleSubmit = async (values: any) => {
 
     success.value = true;
     emit('success');
-
-    // Redirect after 2 seconds
-    setTimeout(() => {
-      navigateTo('/');
-    }, 2000);
   } catch (err: any) {
     error.value =
       err.data?.message || 'حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.';
